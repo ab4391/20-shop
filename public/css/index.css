@@ -1,0 +1,76 @@
+/***************** 공통사항 *******************/
+html, body {font-size: 16px; background: url(../img/bg.jpg) no-repeat center; background-size: cover; background-attachment: fixed;}
+.wrapper {width: 100%; padding: 2rem 0.75rem;}
+.wrap {max-width: 1320px; margin: 0 auto; width: calc(100% -32px);}
+
+.anibar {cursor: pointer; transition: all 0.25s;}
+.anibar::after {border-bottom: 2px solid #fff; display: block; content: ""; transform-origin: left; transform: scaleX(0); transition: all 0.25s;}
+.anibar:hover {color: greenyellow;}
+.anibar:hover::after {transform: scaleX(1); transform-origin: right;}
+
+/*
+.triangle {position: relative;}
+.triangle::after {content: ""; display: block; position: absolute; bottom: -9px; left: calc(50% - 10px); width: 0; height: 0;  border-right: 10px solid transparent; border-left: 10px solid transparent; border-top: 10px solid #fff;}
+*/
+
+
+/***************** .header-wrapper *******************/
+.header-wrapper {display: flex; justify-content: center; align-items: center; color: #f8f8f8; padding: 1rem 0; user-select: none;}
+.header-wrapper > .logo-wrap {display: flex; align-items: center;} 
+.header-wrapper > .logo-wrap > .logo {width: 120px; margin-right: 1em;} 
+.header-wrapper .logo-text > div {line-height: 0.8; letter-spacing: -0.125em; font-size: 3.5em;} 
+.header-wrapper .logo-text > div:first-child {color: cyan;} 
+.header-wrapper .logo-text > div:last-child {padding-left: 0.5em;} 
+
+/***************** .main-wrapper *******************/
+.main-wrapper .now-wrapper {display: flex; margin: 2rem 0;}
+.main-wrapper .map-wrapper {flex: 400px 0 0; height: 600px;}
+.main-wrapper #map {width: 100%; height: calc(100% - 54px);}
+
+.custom-window {display: flex; background-color: yellowgreen; align-items: center; color: #111; font-size: 0.75rem; line-height: 1.1; border: 1px solid #999; border-radius: 6px; transform: translate(0, -36px); position: relative; cursor: pointer;}
+.custom-window.active {background-color: #ffd417;}
+.custom-window.lt {transform: translate(40%, -36px);}
+.custom-window.rt {transform: translate(-40%, -36px);}
+.custom-window > :nth-child(1) {flex: 40px 0 0;}
+.custom-window > :nth-child(2) {padding-right: 8px;}
+.custom-window > :nth-child(3) {position: absolute; bottom: -11px; left: calc(50% - 10px);}
+.custom-window.lt > :nth-child(3) {left: 10px;}
+.custom-window.rt > :nth-child(3) {left: auto; right: 10px;}
+
+#city {margin-bottom: 1rem;}
+
+.main-wrapper .loc-wrapper {flex: 100% 0 1; margin-left: 2%; background-color: rgba(0,0,0,0.4); color: #fff; padding: 2rem;}
+.loc-wrapper .title {font-size: 2em; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 0.75rem;}
+.loc-wrapper .title small {color: #f1d4a3;}
+.loc-wrapper .title small > :last-child {font-size: 0.875em;}
+
+.cont-wrapper {padding: 1rem 0;}
+.daily-weather {display: flex; flex-wrap: wrap;}
+.daily-weather > .icon-wrap {flex: 30% 0 0; display: flex; align-items: center; justify-content: center;}
+.daily-weather > .cont-wrap {flex: 70% 0 0;}
+.daily-weather .temp-wrap {font-size: 2rem; padding: 0.75rem 0;}
+.daily-weather .temp-wrap .temp {color: #f1d4a3;}
+.daily-weather .temp-wrap small {color: #efefef;}
+.daily-weather .desc-wrap {font-size: 1.75rem;}
+.daily-weather .press-wrap {font-size: 1.25rem; padding: 0.5rem 0;}
+.daily-weather .wind-wrap {font-size: 1.25rem; padding-bottom: 0.5rem;}
+.daily-weather > .misc-wrap {flex: 100% 0 0; text-align: center; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.3);}
+
+
+
+/***************** 반응형 *******************/
+@media screen and (max-width: 991px) {
+	
+}
+
+@media screen and (max-width: 767px) {
+	.header {align-items: center;}
+	.header > .logo-wrap > .logo {width: 60px;}
+	.header .logo-text > div {font-size: 2em;}
+	.header .navi-pc {display: none;}
+	.header .navi-mobile {display: block;}
+}
+
+@media screen and (max-width: 575px) {
+	.header .logo-text > div {font-size: 1.75em;}
+}
